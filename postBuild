@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -ex
+
+invoke build --env-name=root --no-kernel
+invoke demofiles
+invoke talk -t demo
+rm -rf demofiles
+rm -rf notebooks
+rm -rf narrative
+rm -rf slides
+rm my-first-binder/hello.py
+jupyter lab clean
